@@ -15,6 +15,7 @@
             align-items: center;
             height: 100vh;
             color: #333;
+            overflow-y: auto; /* 允許垂直滾動 */
         }
         .container {
             background: #fff;
@@ -24,6 +25,7 @@
             max-width: 600px;
             width: 100%;
             text-align: center;
+            margin: 20px;
         }
         h1 {
             color: #007BFF;
@@ -71,7 +73,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+        <div class="container">
         <h1>桃聯區會考落點分析系統</h1>
         <form id="scoreForm">
             <label for="schoolType">選擇分析學校類型:</label>
