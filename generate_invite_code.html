@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>桃聯區會考落點分析邀請碼</title>
+    <title>桃聯區會考落點分析系統邀請碼</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -76,7 +76,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>邀請碼生成器</h1>
+        <h1>桃聯區會考落點分析系統邀請碼</h1>
         <div id="invitationCodeDisplay" onclick="redirectToAnalysisSystem()"></div>
         <div id="expiryTimeDisplay"></div>
         <button id="copyButton" onclick="copyInviteCode()">複製邀請碼</button>
@@ -172,7 +172,7 @@
                 const inviteCode = localStorage.getItem('generatedInviteCode');
                 if (inviteCode) {
                     // 將使用者自動重定向到分析系統並將邀請碼作為查詢參數
-                    window.location.href = `index.html?inviteCode=${inviteCode}`;
+                    window.location.href = `index.html`;
                 }
             }
         </script>
