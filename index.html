@@ -40,15 +40,16 @@
             font-size: 14px;
             text-align: left;
         }
-        select, button {
-            width: 100%;
+        select, button, input[type="text"] {
+            width: calc(100% - 22px); /* Adjusted width to fit within container */
             padding: 10px;
             margin: 5px 0 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 14px;
+            box-sizing: border-box; /* Ensure padding is included in width calculation */
         }
-        select:focus, button:focus {
+        select:focus, button:focus, input[type="text"]:focus {
             outline: none;
             border-color: #007BFF;
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -72,13 +73,14 @@
             color: #555;
             font-size: 16px;
             text-align: left;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>桃聯區會考落點分析系統</h1>
-        <form id="scoreForm">
+            <form id="scoreForm" method="post">
             <label for="invitationCode">輸入邀請碼:</label>
             <input type="text" id="invitationCode" name="invitationCode" required>
             <label for="schoolType">選擇分析學校類型:</label>
