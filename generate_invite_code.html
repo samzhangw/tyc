@@ -68,13 +68,18 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        button#copyButton {
+            font-size: 18px; /* Adjust size as needed */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>桃聯區會考落點分析邀請碼</h1>
+        <h1>邀請碼生成器</h1>
         <div id="invitationCodeDisplay" onclick="redirectToAnalysisSystem()"></div>
         <div id="expiryTimeDisplay"></div>
+        <button id="copyButton" onclick="copyInviteCode()">複製邀請碼</button>
         <script>
             // 初始呼叫以生成並顯示邀請碼
             generateAndDisplayInviteCode();
@@ -144,6 +149,20 @@
             function generateNewInviteCode() {
                 // 生成一個隨機的 6 位數字邀請碼（可以根據需要修改邏輯）
                 return Math.random().toString(36).substr(2, 6).toUpperCase();
+            }
+
+            function copyInviteCode() {
+                const inviteCode = localStorage.getItem('generatedInviteCode');
+                if (inviteCode) {
+                    // 複製邀請碼到剪貼板
+                    navigator.clipboard.writeText(inviteCode)
+                        .then(() => {
+                            alert('邀請碼已成功複製！');
+                        })
+                        .catch(err => {
+                            console.error('無法複製邀請碼：', err);
+                        });
+                }
             }
 
             function redirectToAnalysisSystem() {
