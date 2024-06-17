@@ -321,7 +321,12 @@
     // 打開彈出視窗
     modal.style.display = "block";
 }
-
+  // 當用戶點擊模態外部區域時，關閉彈出視窗
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
 
 
             function closeModal() {
