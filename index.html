@@ -75,6 +75,47 @@
             text-align: left;
             margin-bottom: 5px;
         }
+
+        /* 彈出視窗的 CSS */
+        .modal {
+            display: none; /* 默認隱藏 */
+            position: fixed; /* 固定定位 */
+            z-index: 1; /* 置頂 */
+            left: 0;
+            top: 0;
+            width: 100%; /* 寬度 */
+            height: 100%; /* 高度 */
+            overflow: auto; /* 允許滾動 */
+            background-color: rgba(0,0,0,0.4); /* 黑色背景，透明度 */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 上邊距 15%，自動居中 */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* 寬度，根據內容調整 */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
