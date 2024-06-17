@@ -80,9 +80,32 @@
         <div id="invitationCodeDisplay" onclick="redirectToAnalysisSystem()"></div>
         <div id="expiryTimeDisplay"></div>
         <button id="copyButton" onclick="copyInviteCode()">複製邀請碼</button>
-                    <footer>
-    <p style="text-align: center; font-size: 12px; color: #999;">&copy; 2024 桃聯區會考落點分析系統2.0. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p style="text-align: center; font-size: 12px; color: #999;">&copy; 2024 桃聯區會考落點分析系統2.0. All rights reserved.</p>
+                <script>
+
+document.body.onkeydown = function(e){
+var keyCode = e.keyCode || e.which || e.charCode;
+var ctrlKey = e.ctrlKey || e.metaKey;
+if(ctrlKey && (keyCode == 83 || keyCode == 85 || keyCode == 73)) {
+e.preventDefault();
+return false;
+}else if(keyCode && keyCode == 123){
+return false;
+}
+}
+
+</script>
+    <script>
+
+document.oncontextmenu = function (){
+return false;
+}
+</script>
+            <noscript><p style="font-size:70px;">對不起，你的瀏覽器不支持或禁用了JavaScript，無法正常使用此網站</p></noscript>
+
+
+        </footer>
         <script>
             // 初始呼叫以生成並顯示邀請碼
             generateAndDisplayInviteCode();
