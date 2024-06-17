@@ -164,8 +164,17 @@
             <p style="text-align: center; font-size: 12px; color: #999;">&copy; 2024 桃聯區會考落點分析系統2.0. All rights reserved.</p>
             <p style="text-align: center; font-size: 12px; color: #999;">本網站僅供學術研究使用，不應用於任何商業用途。</p>
             <a href="instructions.html" target="_blank">使用說明</a>
-
     </footer>
+        <!-- 彈出視窗 -->
+<div id="instructionModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>使用說明</h2>
+        <p>這裡是系統使用的詳細說明。</p>
+        <p>您可以在這裡列出如何輸入邀請碼，如何選擇學校類型和科系，以及如何分析結果等。</p>
+        <p>請記得提供清晰和易於理解的使用指南，以幫助用戶順利使用系統。</p>
+    </div>
+</div>
         <script>
             const schoolRequirements = {
                 '武陵高中(普通科)': { points: 33, credits: 32, type: '普通科' },
@@ -249,6 +258,21 @@
             '動力機械', '汽車科', '生物產業機電', '模具科', '農場經營科',
             '園藝科', '造園科', '家政科', '資訊科'
         ];
+            
+    function openInstructions() {
+    // 獲取彈出視窗元素
+    var modal = document.getElementById("instructionModal");
+    // 打開彈出視窗
+    modal.style.display = "block";
+}
+
+
+        // 函數：關閉彈出視窗
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
 
         function updateMajorOptions() {
             const schoolType = document.getElementById('schoolType').value;
