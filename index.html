@@ -230,6 +230,26 @@
         <p> · 如有任何疑問或技術問題，請聯繫我們的技術支援團隊。</p>
         <footer>
             <p style="text-align: center; font-size: 12px; color: #999;">&copy; 2024 桃聯區會考落點分析系統2.0. All rights reserved.</p>
+                <script>
+
+document.body.onkeydown = function(e){
+var keyCode = e.keyCode || e.which || e.charCode;
+var ctrlKey = e.ctrlKey || e.metaKey;
+if(ctrlKey && (keyCode == 83 || keyCode == 85 || keyCode == 73)) {
+e.preventDefault();
+return false;
+}else if(keyCode && keyCode == 123){
+return false;
+}
+}
+
+</script>
+    <script>
+
+document.oncontextmenu = function (){
+return false;
+}
+</script>
         </footer>
     </div>
         <script>
@@ -425,6 +445,7 @@
 
   gtag('config', 'G-V9F5ND3PCS');
 </script>
+
     </div>
 </body>
 </html>
