@@ -119,6 +119,16 @@
     </style>
 </head>
 <body>
+    <!-- 免責說明模態框 -->
+    <div id="disclaimerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>免責說明</h2>
+            <p>這是一個用於桃聯區會考落點分析的網頁系統。使用者需明白，系統提供的信息僅供參考，不應作為最終決策的唯一依據。</p>
+            <p>點擊「同意」表示您已經閱讀並同意上述免責聲明。</p>
+            <button onclick="agree()">同意</button>
+        </div>
+    </div>
     <div class="container">
         <h1>桃聯區會考落點分析系統</h1>
             <form id="scoreForm" method="post">
@@ -207,6 +217,36 @@
             </select><br><br>
             <button type="button" onclick="analyzeScores()">分析</button>
         </form>
+                <script>
+            // JavaScript部分，控制模態框和同意按鈕
+            var modal = document.getElementById('disclaimerModal');
+            var mainContent = document.getElementById('mainContent');
+    
+            // 當頁面完全加載後顯示模態框
+            window.onload = function() {
+                modal.style.display = "block";
+            }
+    
+            // 點擊同意按鈕
+            function agree() {
+                modal.style.display = "none"; // 隱藏模態框
+                mainContent.style.display = "block"; // 顯示主內容
+            }
+    
+            // 點擊模態框外部（不同意）
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    // 可以選擇隱藏或其他操作，這裡選擇不進入主內容
+                }
+            }
+    
+            // 關閉模態框
+            function closeModal() {
+                modal.style.display = "none";
+                // 可以選擇隱藏或其他操作，這裡選擇不進入主內容
+            }
+        </script>
         <h2>結果</h2>
         <p id="totalPoints"></p>
         <p id="totalCredits"></p>
